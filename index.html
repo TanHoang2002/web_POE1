@@ -366,6 +366,11 @@
     padding:36px; text-align:center; box-shadow:var(--shadow);
   }
   .contact-card img{width:110px; height:110px; object-fit:contain; margin:0 auto 8px}
+  /* Logo cáo luôn dẫn về trang chủ */
+  .fox-home{display:inline-block; transition:transform .2s}
+  .fox-home:hover{transform:scale(1.05)}
+  .fox-home-hero{display:flex; justify-content:center; width:100%}
+  .fox-home-card{display:block; width:max-content; margin:0 auto}
   .contact-card h3{margin:0 0 10px; font-size:22px; font-weight:900}
   .contact-card p{margin:0 auto 20px; color:var(--muted); max-width:58ch}
   .contact-status{
@@ -559,6 +564,16 @@
     .receive-value{font-size:24px}
     .sec-desc,.hero-sub{font-size:15.5px}
   }
+
+  /* ---------- MÀN HÌNH RỘNG: phóng cả trang theo bậc và nới khung, để ảnh và chữ không bị co về giữa ----------
+     Trang đặt kích thước bằng px nên dùng zoom cho cả trang thay vì sửa từng chỗ. */
+  @media (min-width:1440px){
+    html{zoom:1.12}
+    .wrap{width:min(1400px, 100% - 40px)}
+  }
+  @media (min-width:1700px){ html{zoom:1.25} }
+  @media (min-width:2000px){ html{zoom:1.4} }
+  @media (min-width:2400px){ html{zoom:1.55} }
 </style>
 </head>
 <body>
@@ -566,7 +581,7 @@
 <header class="nav">
   <div class="wrap nav-inner">
     <button class="menu-btn" id="menuBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="settingsPanel" aria-label="Mở cài đặt" data-i18n-aria="set.open"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-    <a class="brand" href="#top" aria-label="GegeTeam — Nhà Cáo, trang chủ">
+    <a class="brand" href="/" title="Về trang chủ GeGe Team" aria-label="Về trang chủ GeGe Team">
       <img src="assets/logo.png" alt="Logo Nhà Cáo — GegeTeam" />
       <span class="brand-name">GegeTeam<small>Nhà Cáo · Path of Exile 1</small></span>
     </a>
@@ -600,7 +615,7 @@
   <img class="hero-bg-img" src="assets/hero.webp" alt="" aria-hidden="true" />
   <div class="wrap hero-inner">
     <div class="hero-logo reveal reveal-zoom">
-      <img src="assets/logo.png" alt="Logo Nhà Cáo: cáo cam đeo tai nghe gaming cầm muỗng, chữ GEGE TEAM" />
+      <a class="fox-home fox-home-hero" href="/" title="Về trang chủ GeGe Team"><img src="assets/logo.png" alt="Logo Nhà Cáo: cáo cam đeo tai nghe gaming cầm muỗng, chữ GEGE TEAM. Bấm để về trang chủ GeGe Team" /></a>
       <p data-i18n="hero.caption">Cứ thấy Cáo Cam là thấy GegeTeam. Chuẩn nhà, đúng người, an tâm tuyệt đối.</p>
     </div>
     <div class="hero-buy reveal" id="thu-mua">
@@ -850,7 +865,7 @@
 <section id="lien-he" style="padding-top:0">
   <div class="wrap">
     <div class="contact-card reveal">
-      <img src="assets/logo.png" alt="Logo Nhà Cáo — GegeTeam" />
+      <a class="fox-home fox-home-card" href="/" title="Về trang chủ GeGe Team"><img src="assets/logo.png" alt="Về trang chủ GeGe Team" /></a>
       <span class="contact-status"><span class="dot"></span><span data-i18n="contact.status">Liên hệ trực tiếp với Nhà Cáo qua các kênh chính thức bên dưới</span></span>
       <h3 data-i18n="contact.h">Muốn cày cùng Nhà Cáo, hay có Divine / Mirror cần bán?</h3>
       <p data-i18n="contact.p">Nhắn cho team qua Fanpage hoặc Zalo Admin để chốt việc nhanh nhất. League áp dụng sẽ được team xác nhận cụ thể với bạn khi chốt giá.</p>
@@ -876,7 +891,7 @@
 <footer>
   <div class="wrap foot-grid">
     <div class="foot-brand">
-      <img src="assets/logo.png" alt="Logo Nhà Cáo — GegeTeam" />
+      <a href="/" title="Về trang chủ GeGe Team"><img src="assets/logo.png" alt="Về trang chủ GeGe Team" /></a>
       <div>
         <strong>GegeTeam — Nhà Cáo · Path of Exile 1</strong>
         <p data-i18n="foot.desc">Chơi bằng đam mê, làm bằng tâm huyết. Booster cày account · Farm map &amp; boss · Mua bán item hộ · Thu mua Divine Orb &amp; Mirror of Kalandra. Rate thu mua được cập nhật liên tục; giá VND là giá tham khảo và được chốt lại tại thời điểm giao dịch.</p>
