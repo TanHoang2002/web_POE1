@@ -11,7 +11,7 @@
 <title>GegeTeam — Nhà Cáo | POE1: Booster, Item &amp; Thu mua Divine, Mirror</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet" />
 <style>
   :root{
     color-scheme:dark;
@@ -565,6 +565,74 @@
     .sec-desc,.hero-sub{font-size:15.5px}
   }
 
+
+  /* ---------- Thanh menu: địa cầu (ngôn ngữ) + 3 gạch (danh mục, giao diện) nằm bên phải ---------- */
+  .nav-tools{display:flex; align-items:center; gap:8px; margin-left:auto; flex:none}
+  .nav-inner{flex-wrap:nowrap}
+  .brand{min-width:0}
+  .brand-name{min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+  .brand-name small{overflow:hidden; text-overflow:ellipsis}
+  .lang-btn{width:auto; display:flex; gap:6px; padding:0 12px}
+  .lang-code{font-size:13px; font-weight:800; letter-spacing:.06em}
+  .settings-panel{left:auto; right:0}
+  .lang-panel{width:min(240px, calc(100vw - 32px))}
+  .lang-panel .sp-title{margin-bottom:10px}
+  .menu-links{display:flex; flex-direction:column; gap:2px}
+  .menu-links a{padding:11px 12px; border-radius:10px; font-size:15.5px; font-weight:700; color:var(--text); text-decoration:none}
+  .menu-links a:hover{background:var(--surface-2); color:var(--fox)}
+  .menu-links .nav-cta{margin-top:8px; text-align:center}
+
+  /* ---------- Trang trí kiểu POE: khung vật phẩm viền đồng, chữ Cinzel, đường phân cách hình thoi ---------- */
+  :root{--poe-gold:#e2c27a; --poe-gold-deep:#c9a45c; --poe-bronze:#6b5533; --poe-ink:#0b0907; --poe-text:#e8dcc6; --poe-muted:#a89272}
+  .poe-sep{position:relative; height:12px; background:linear-gradient(90deg, transparent, #8a6d3f 18%, #8a6d3f 82%, transparent) center / 100% 1px no-repeat}
+  .poe-sep::after{content:""; position:absolute; left:50%; top:50%; width:8px; height:8px; background:var(--poe-gold); transform:translate(-50%,-50%) rotate(45deg); box-shadow:0 0 10px rgba(226,194,122,.6)}
+  .sec-title::after, .intro-slogan::after{content:""; display:block; width:180px; height:12px; margin-top:14px;
+    background:radial-gradient(circle, var(--poe-gold) 0 3px, rgba(226,194,122,.35) 3.5px 5px, transparent 5.5px) center / 12px 12px no-repeat,
+               linear-gradient(90deg, transparent, var(--poe-gold-deep) 30%, var(--poe-gold-deep) 70%, transparent) center / 100% 1px no-repeat}
+
+  .buy-visuals .buy-visual{background:linear-gradient(180deg, #17110c, #0c0907); border:1px solid #3d3122; border-radius:6px; color:var(--poe-text); transition:border-color .2s, box-shadow .2s, transform .2s}
+  .buy-visuals .buy-visual:hover{border-color:var(--poe-bronze); transform:translateY(-2px)}
+  .buy-visuals .rate-card.is-selected{border-color:var(--poe-gold-deep); box-shadow:0 0 0 1px var(--poe-gold-deep), 0 0 26px rgba(226,194,122,.18)}
+  .buy-visuals .bv-name{font-family:"Cinzel", serif; color:var(--poe-gold); letter-spacing:.02em}
+  .buy-visuals .bv-eq{color:var(--poe-muted)}
+
+  .swap-card.poe-frame{padding:0; gap:0; overflow:hidden; color:var(--poe-text); background:linear-gradient(180deg, #120e0b, var(--poe-ink)); border:1px solid var(--poe-bronze); border-radius:6px;
+    box-shadow:0 0 0 1px #000, 0 0 0 3px #2a2116, 0 0 0 4px #4a3b25, 0 24px 50px rgba(0,0,0,.45)}
+  .poe-head{position:relative; display:flex; flex-direction:column; align-items:center; gap:2px; padding:14px 64px 12px; text-align:center;
+    background:linear-gradient(180deg, #3b2c1a 0%, #24190f 55%, #170f09 100%); border-bottom:1px solid var(--poe-bronze)}
+  .poe-head::before, .poe-head::after{content:""; position:absolute; top:50%; width:44px; height:12px; margin-top:-6px;
+    background:radial-gradient(circle, var(--poe-gold) 0 3px, rgba(226,194,122,.35) 3.5px 5px, transparent 5.5px) right center / 12px 12px no-repeat, linear-gradient(90deg, transparent, var(--poe-gold-deep)) left center / calc(100% - 10px) 1px no-repeat}
+  .poe-head::before{left:16px}
+  .poe-head::after{right:16px; transform:scaleX(-1)}
+  .poe-head-label{font-size:12px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--poe-muted)}
+  .poe-head-name{font-family:"Cinzel", serif; font-size:25px; font-weight:700; letter-spacing:.04em; color:var(--poe-gold); text-shadow:0 0 14px rgba(226,194,122,.35)}
+  .poe-body{display:flex; flex-direction:column; gap:14px; padding:20px 22px 22px}
+  .calc-label, .calc-result-label{font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--poe-muted)}
+  .qty-row{display:grid; grid-template-columns:52px minmax(0,1fr) 52px; gap:8px}
+  .qty-step{height:56px; border:1px solid #5c4a2e; border-radius:4px; background:linear-gradient(180deg, #2a2016, #17110b); color:var(--poe-gold); font:inherit; font-size:26px; font-weight:700; line-height:1; cursor:pointer; transition:border-color .15s, color .15s}
+  .qty-step:hover{border-color:var(--poe-gold-deep); color:#fff3d0}
+  .poe-frame .qty-wrap{width:100%; max-width:none; height:56px; justify-self:stretch; padding:0 14px; background:#07060a; border:1px solid #5c4a2e; border-radius:4px}
+  .poe-frame .qty-wrap:focus-within{background:#07060a; border-color:var(--poe-gold); box-shadow:0 0 0 2px rgba(226,194,122,.22)}
+  .poe-frame .qty-input{color:#f4ead6; font-size:26px; text-align:center; font-variant-numeric:tabular-nums}
+  .poe-frame .qty-input::placeholder{color:#6f6150; font-size:16px}
+  .qty-quick{display:flex; gap:6px}
+  .qty-chip{flex:1 1 0; min-height:38px; border:1px solid #3d3122; border-radius:4px; background:#14100b; color:#cdbb98; font:inherit; font-size:14px; font-weight:700; cursor:pointer; font-variant-numeric:tabular-nums; transition:border-color .15s, color .15s}
+  .qty-chip:hover{border-color:var(--poe-gold-deep); color:var(--poe-gold)}
+  .calc-unit{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:6px 12px; padding:10px 12px; font-size:14px; color:var(--poe-muted); background:rgba(255,255,255,.03); border:1px solid #2c2318; border-radius:4px}
+  .calc-unit-val{color:var(--poe-text); font-variant-numeric:tabular-nums}
+  .calc-unit-val b{color:#f4ead6}
+  .dot-sep{margin:0 8px; color:var(--poe-bronze)}
+  .calc-result{display:flex; flex-direction:column; align-items:center; gap:2px; text-align:center}
+  .poe-frame .receive-value{justify-content:center; font-size:40px; color:#f0cf7a; text-shadow:0 0 18px rgba(240,207,122,.25)}
+  .poe-frame .receive-value small{color:var(--poe-gold-deep)}
+  .poe-frame .receive-sub{color:var(--poe-muted)}
+  .poe-frame .btn-zalo{background:linear-gradient(180deg, #e0ad4a, #a8741f); color:#1a1006; border:1px solid #f0cf7a; box-shadow:inset 0 1px 0 rgba(255,255,255,.35), 0 6px 18px rgba(0,0,0,.35)}
+  .poe-frame .btn-zalo:hover{background:linear-gradient(180deg, #f0c060, #b9822a)}
+  .poe-frame .btn-fb{background:transparent; color:var(--poe-gold); border:1px solid var(--poe-bronze); box-shadow:none}
+  .poe-frame .btn-fb:hover{border-color:var(--poe-gold-deep); background:rgba(226,194,122,.06)}
+  .poe-frame .swap-note{color:#8c7a5e}
+  @media (max-width:480px){ .poe-head{padding:12px 46px 10px} .poe-head::before, .poe-head::after{width:26px} .poe-head-name{font-size:21px} .poe-frame .receive-value{font-size:32px} }
+
   /* ---------- MÀN HÌNH RỘNG: phóng cả trang theo bậc và nới khung, để ảnh và chữ không bị co về giữa ----------
      Trang đặt kích thước bằng px nên dùng zoom cho cả trang thay vì sửa từng chỗ. */
   @media (min-width:1440px){
@@ -580,31 +648,35 @@
 
 <header class="nav">
   <div class="wrap nav-inner">
-    <button class="menu-btn" id="menuBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="settingsPanel" aria-label="Mở cài đặt" data-i18n-aria="set.open"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     <a class="brand" href="/" title="Về trang chủ GeGe Team" aria-label="Về trang chủ GeGe Team">
       <img src="assets/logo.png" alt="Logo Nhà Cáo — GegeTeam" />
       <span class="brand-name">GegeTeam<small>Nhà Cáo · Path of Exile 1</small></span>
     </a>
-    <nav class="nav-links" aria-label="Điều hướng chính">
-      <a href="#thu-mua" data-i18n="nav.buy">Thu mua Divine &amp; Mirror</a>
-      <a href="#gioi-thieu" data-i18n="nav.about">Giới thiệu</a>
-      <a href="#dich-vu" data-i18n="nav.services">Dịch vụ</a>
-      <a href="#huong-dan" data-i18n="nav.guide">Hướng dẫn</a>
-      <a class="nav-cta" href="#lien-he" data-i18n="nav.contact">Liên hệ</a>
-    </nav>
-    <div class="settings-panel" id="settingsPanel" hidden role="dialog" aria-label="Cài đặt">
-      <p class="sp-title" data-i18n="set.title">Cài đặt</p>
-      <p class="sp-label" data-i18n="set.theme">Giao diện</p>
-      <div class="sp-seg" role="group" aria-label="Theme">
-        <button type="button" class="sp-opt" data-theme-opt="light" aria-pressed="false"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg><span data-i18n="set.light">Sáng</span></button>
-        <button type="button" class="sp-opt" data-theme-opt="dark" aria-pressed="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13.2A8.2 8.2 0 1 1 10.8 4a6.6 6.6 0 0 0 9.2 9.2z"/></svg><span data-i18n="set.dark">Tối</span></button>
-      </div>
-      <p class="sp-label" data-i18n="set.lang">Ngôn ngữ</p>
+    <div class="nav-tools">
+      <button class="menu-btn lang-btn" id="langBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="langPanel" aria-label="Ngôn ngữ" data-i18n-aria="set.lang"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M2.8 12h18.4M12 2.8c2.6 2.5 3.9 5.6 3.9 9.2s-1.3 6.7-3.9 9.2c-2.6-2.5-3.9-5.6-3.9-9.2s1.3-6.7 3.9-9.2z"/></svg><span class="lang-code" id="langCode">VI</span></button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="settingsPanel" aria-label="Mở menu" data-i18n-aria="set.open"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+    <div class="settings-panel lang-panel" id="langPanel" hidden role="dialog" aria-label="Ngôn ngữ">
+      <p class="sp-title" data-i18n="set.lang">Ngôn ngữ</p>
       <div class="sp-langs" role="group" aria-label="Language">
         <button type="button" class="sp-lang" data-lang-opt="vi" aria-pressed="true">Tiếng Việt<span class="sp-check" aria-hidden="true">✓</span></button>
         <button type="button" class="sp-lang" data-lang-opt="en" aria-pressed="false">English<span class="sp-check" aria-hidden="true">✓</span></button>
         <button type="button" class="sp-lang" data-lang-opt="zh" aria-pressed="false">中文<span class="sp-check" aria-hidden="true">✓</span></button>
         <button type="button" class="sp-lang" data-lang-opt="ru" aria-pressed="false">Русский<span class="sp-check" aria-hidden="true">✓</span></button>
+      </div>
+    </div>
+    <div class="settings-panel" id="settingsPanel" hidden role="dialog" aria-label="Menu">
+      <nav class="menu-links" aria-label="Điều hướng chính">
+        <a href="#thu-mua" data-i18n="nav.buy">Thu mua Divine &amp; Mirror</a>
+        <a href="#gioi-thieu" data-i18n="nav.about">Giới thiệu</a>
+        <a href="#dich-vu" data-i18n="nav.services">Dịch vụ</a>
+        <a href="#huong-dan" data-i18n="nav.guide">Hướng dẫn</a>
+        <a class="nav-cta" href="#lien-he" data-i18n="nav.contact">Liên hệ</a>
+      </nav>
+      <p class="sp-label" data-i18n="set.theme">Giao diện</p>
+      <div class="sp-seg" role="group" aria-label="Theme">
+        <button type="button" class="sp-opt" data-theme-opt="light" aria-pressed="false"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg><span data-i18n="set.light">Sáng</span></button>
+        <button type="button" class="sp-opt" data-theme-opt="dark" aria-pressed="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13.2A8.2 8.2 0 1 1 10.8 4a6.6 6.6 0 0 0 9.2 9.2z"/></svg><span data-i18n="set.dark">Tối</span></button>
       </div>
     </div>
   </div>
@@ -634,31 +706,36 @@
       </button>
     </div>
 
-    <div class="swap-card reveal">
-      <div class="swap-block">
-        <label class="swap-label" for="inQty"><span data-i18n="swap.sell">Tôi sẽ bán</span> · <span id="sellItemName">Divine Orb</span></label>
-        <div class="swap-top">
+    <div class="swap-card poe-frame reveal">
+      <div class="poe-head">
+        <span class="poe-head-label" data-i18n="swap.sell">Tôi sẽ bán</span>
+        <strong class="poe-head-name" id="sellItemName">Divine Orb</strong>
+      </div>
+      <div class="poe-body">
+        <label class="calc-label" for="inQty" data-i18n="calc.qty">Số lượng</label>
+        <div class="qty-row">
+          <button type="button" class="qty-step" data-step="-1" aria-label="Giảm 1" data-i18n-aria="calc.dec">−</button>
           <div class="qty-wrap" id="qtyWrap">
             <input class="qty-input" id="inQty" type="number" inputmode="decimal" min="0" step="any" value="" placeholder="Nhập số lượng" data-i18n-ph="swap.qtyPh" aria-label="Số Divine Orb bạn muốn bán" />
           </div>
-          <span class="swap-x" aria-hidden="true">×</span>
-          <div class="unit-price" aria-label="Đơn giá của item đang chọn">
-            <span class="unit-vnd" id="unitVnd">3.002 VND</span>
-            <span class="unit-usdt" id="unitUsdt">0,115 USDT</span>
-          </div>
+          <button type="button" class="qty-step" data-step="1" aria-label="Tăng 1" data-i18n-aria="calc.inc">+</button>
         </div>
-      </div>
-
-      <div class="swap-receive">
-        <span class="receive-eq" aria-hidden="true">=</span>
-        <div class="receive-value"><span id="resMain">—</span> <small>VND</small></div>
-        <div class="receive-sub" aria-live="polite"><span id="resSub">— USDT</span></div>
-      </div>
-
+        <div class="qty-quick" id="qtyQuick" role="group" aria-label="Chọn nhanh số lượng"></div>
+        <div class="calc-unit">
+          <span data-i18n="calc.unit">Đơn giá</span>
+          <span class="calc-unit-val"><b id="unitVnd">3.002 VND</b><span class="dot-sep">·</span><span id="unitUsdt">0,115 USDT</span></span>
+        </div>
+        <div class="poe-sep" aria-hidden="true"></div>
+        <div class="calc-result">
+          <span class="calc-result-label" data-i18n="calc.receive">Bạn nhận được</span>
+          <div class="receive-value"><span id="resMain">—</span> <small>VND</small></div>
+          <div class="receive-sub" aria-live="polite"><span id="resSub">— USDT</span></div>
+        </div>
       <div class="swap-cta">
         <a class="btn btn-zalo swap-cta-main" href="https://zalo.me/0936854505" target="_blank" rel="noopener" data-i18n="swap.zalo">Liên hệ Zalo</a>
         <a class="btn btn-fb swap-cta-sub" href="https://www.facebook.com/GegeTeam.net/" target="_blank" rel="noopener" data-i18n="swap.fanpage">Nhắn Fanpage</a>
         <p class="swap-note" data-i18n="swap.note">Trade trong game, nhận tiền trực tiếp từ team — web không nhận tiền hay thông tin ngân hàng của bạn.</p>
+      </div>
       </div>
 
     </div>
@@ -1014,6 +1091,28 @@
   qtyWrap.addEventListener('click', function(){ inQty.focus(); });
   inQty.addEventListener('input', function(){ update(); });
 
+  // Nút −/+ và các mức chọn nhanh, mức chọn nhanh đổi theo vật phẩm đang chọn
+  var QUICK = { divine: [10, 50, 100, 500], mirror: [1, 2, 5, 10] };
+  var qtyQuick = document.getElementById('qtyQuick');
+  function setQty(v){ inQty.value = v > 0 ? String(Math.round(v * 10000) / 10000) : ''; update(); }
+  function renderQuick(){
+    qtyQuick.textContent = '';
+    QUICK[currentItem].forEach(function(n){
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'qty-chip'; b.textContent = fmtInt.format(n);
+      b.addEventListener('click', function(){ setQty(n); });
+      qtyQuick.appendChild(b);
+    });
+  }
+  var steps = document.querySelectorAll('.qty-step');
+  for (var st = 0; st < steps.length; st++){
+    steps[st].addEventListener('click', function(){ setQty(Math.max(0, parseNum(inQty) + Number(this.getAttribute('data-step')))); });
+  }
+  for (var rc = 0; rc < rateCards.length; rc++){
+    rateCards[rc].addEventListener('click', renderQuick);
+  }
+  renderQuick();
+
   update();
 
   // ---- Scroll reveal: fade + rise + bloom, both scroll directions ----
@@ -1056,6 +1155,7 @@
     "hero.buyTitle":"Thu mua <span class=\"hl\">Divine &amp; Mirror</span>",
     "hero.buySub":"Rate được cập nhật liên tục, hiển thị cả USDT lẫn VND để bạn tự tính trước khi chốt — giao dịch trực tiếp với Nhà Cáo qua Zalo hoặc Fanpage.",
     "card.selected":"Đang chọn","card.ariaDivine":"Chọn Divine Orb để tính tiền","card.ariaMirror":"Chọn Mirror of Kalandra để tính tiền",
+    "calc.qty":"Số lượng","calc.unit":"Đơn giá","calc.receive":"Bạn nhận được","calc.dec":"Giảm 1","calc.inc":"Tăng 1",
     "swap.sell":"Tôi sẽ bán","swap.qtyPh":"Nhập số lượng",
     "qty.ariaDivine":"Số Divine Orb bạn muốn bán","qty.ariaMirror":"Số Mirror of Kalandra bạn muốn bán",
     "swap.zalo":"Liên hệ Zalo","swap.fanpage":"Nhắn Fanpage",
@@ -1132,6 +1232,7 @@
     "hero.buyTitle":"We buy <span class=\"hl\">Divine &amp; Mirror</span>",
     "hero.buySub":"Rates are updated continuously and shown in both USDT and VND so you can calculate before you commit — deal directly with Nhà Cáo via Zalo or the Fanpage.",
     "card.selected":"Selected","card.ariaDivine":"Select Divine Orb to calculate","card.ariaMirror":"Select Mirror of Kalandra to calculate",
+    "calc.qty":"Quantity","calc.unit":"Unit price","calc.receive":"You receive","calc.dec":"Decrease by 1","calc.inc":"Increase by 1",
     "swap.sell":"I will sell","swap.qtyPh":"Enter quantity",
     "qty.ariaDivine":"Number of Divine Orbs you want to sell","qty.ariaMirror":"Number of Mirrors of Kalandra you want to sell",
     "swap.zalo":"Contact via Zalo","swap.fanpage":"Message the Fanpage",
@@ -1209,6 +1310,7 @@
     "hero.buyTitle":"收购 <span class=\"hl\">Divine &amp; Mirror</span>",
     "hero.buySub":"汇率持续更新，同时显示 USDT 和 VND，方便您在确认前自行计算——通过 Zalo 或 Fanpage 直接与 Nhà Cáo 交易。",
     "card.selected":"已选择","card.ariaDivine":"选择 Divine Orb 进行计算","card.ariaMirror":"选择 Mirror of Kalandra 进行计算",
+    "calc.qty":"数量","calc.unit":"单价","calc.receive":"您将获得","calc.dec":"减少 1","calc.inc":"增加 1",
     "swap.sell":"我要出售","swap.qtyPh":"输入数量",
     "qty.ariaDivine":"您想出售的 Divine Orb 数量","qty.ariaMirror":"您想出售的 Mirror of Kalandra 数量",
     "swap.zalo":"通过 Zalo 联系","swap.fanpage":"私信 Fanpage",
@@ -1285,6 +1387,7 @@
     "hero.buyTitle":"Скупаем <span class=\"hl\">Divine &amp; Mirror</span>",
     "hero.buySub":"Курс обновляется постоянно и показан и в USDT, и в VND, чтобы вы могли посчитать всё до сделки — общение напрямую с Nhà Cáo через Zalo или Fanpage.",
     "card.selected":"Выбрано","card.ariaDivine":"Выбрать Divine Orb для расчёта","card.ariaMirror":"Выбрать Mirror of Kalandra для расчёта",
+    "calc.qty":"Количество","calc.unit":"Цена за шт.","calc.receive":"Вы получите","calc.dec":"Уменьшить на 1","calc.inc":"Увеличить на 1",
     "swap.sell":"Я продам","swap.qtyPh":"Введите количество",
     "qty.ariaDivine":"Количество Divine Orb, которое вы хотите продать","qty.ariaMirror":"Количество Mirror of Kalandra, которое вы хотите продать",
     "swap.zalo":"Связаться в Zalo","swap.fanpage":"Написать в Fanpage",
@@ -1368,6 +1471,9 @@
 
   var menuBtn = document.getElementById("menuBtn");
   var panel = document.getElementById("settingsPanel");
+  var langBtn = document.getElementById("langBtn");
+  var langPanel = document.getElementById("langPanel");
+  var langCode = document.getElementById("langCode");
   var inQtyEl = document.getElementById("inQty");
 
   function markActive(attr, val){
@@ -1402,31 +1508,38 @@
       inQtyEl.setAttribute("aria-label", t(item === "mirror" ? "qty.ariaMirror" : "qty.ariaDivine"));
     }
     markActive("data-lang-opt", l);
+    if (langCode) langCode.textContent = l.toUpperCase();
+    if (langPanel) langPanel.setAttribute("aria-label", t("set.lang"));
     try { localStorage.setItem("gege-lang", l); } catch(e){}
   }
+  var POPS = [[menuBtn, panel], [langBtn, langPanel]];
   function closePanel(){
-    if (panel) panel.hidden = true;
-    if (menuBtn) menuBtn.setAttribute("aria-expanded", "false");
+    POPS.forEach(function(pp){ if (pp[1]) pp[1].hidden = true; if (pp[0]) pp[0].setAttribute("aria-expanded", "false"); });
   }
-  if (menuBtn && panel){
-    menuBtn.addEventListener("click", function(e){
+  POPS.forEach(function(pp){
+    var btn = pp[0], pop = pp[1];
+    if (!btn || !pop) return;
+    btn.addEventListener("click", function(e){
       e.stopPropagation();
-      var open = panel.hidden;
-      panel.hidden = !open;
-      menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      var open = pop.hidden;
+      closePanel();
+      pop.hidden = !open;
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
     });
-    panel.addEventListener("click", function(e){ e.stopPropagation(); });
-    document.addEventListener("click", function(){ if (!panel.hidden) closePanel(); });
-    document.addEventListener("keydown", function(e){ if (e.key === "Escape") closePanel(); });
-    var topts = document.querySelectorAll("[data-theme-opt]");
-    for (var i = 0; i < topts.length; i++){
-      topts[i].addEventListener("click", function(){ applyTheme(this.getAttribute("data-theme-opt")); closePanel(); });
-    }
-    var lopts = document.querySelectorAll("[data-lang-opt]");
-    for (var j = 0; j < lopts.length; j++){
-      lopts[j].addEventListener("click", function(){ applyLang(this.getAttribute("data-lang-opt")); closePanel(); });
-    }
+    pop.addEventListener("click", function(e){ e.stopPropagation(); });
+  });
+  document.addEventListener("click", closePanel);
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape") closePanel(); });
+  var topts = document.querySelectorAll("[data-theme-opt]");
+  for (var i = 0; i < topts.length; i++){
+    topts[i].addEventListener("click", function(){ applyTheme(this.getAttribute("data-theme-opt")); closePanel(); });
   }
+  var lopts = document.querySelectorAll("[data-lang-opt]");
+  for (var j = 0; j < lopts.length; j++){
+    lopts[j].addEventListener("click", function(){ applyLang(this.getAttribute("data-lang-opt")); closePanel(); });
+  }
+  var mlinks = document.querySelectorAll(".menu-links a");
+  for (var ml = 0; ml < mlinks.length; ml++){ mlinks[ml].addEventListener("click", closePanel); }
   applyTheme(document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark");
   applyLang(curLang);
 })();
